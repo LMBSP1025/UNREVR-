@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>공방</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            canvas {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="js/three.js"></script>
+        <script src="node_modules\three\examples\js\controls\OrbitControls.js"></script>
+        <script src="node_modules\three\examples\js\loaders\GLTFLoader.js"></script>
+        <script>
+
+            const loader = new THREE.GLTFLoader();
+            loader.load('복주머니.gltf', function(gltf) {
+
+              scene.add(gltf.scene);
+            });
+            
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(
+                45,
+                window.innerWidth / window.innerHeight,
+                1,
+                10000
+            );
+            var renderer = new THREE.WebGLRenderer({antialias:true});
+            renderer.setClearColor(new THREE.Color(0x000000));
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0xffffff);
+
+            var spotLight = new THREE.SpotLight(0xFFFFFF);
+            spotLight
+                .position
+                .set(0, 1500, 0);
+            scene.add(spotLight);
+
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls
+                .target
+                .set(0, 150, 00);
+            camera
+                .position
+                .set(0, 150, 100);
+            controls.update();
+            controls.rotateSpeed = -0.2; // 마우스로 카메라를 회전시킬 속도입니다. 기본값(Float)은 1입니다.
+            controls.zoomSpeed = 1.2; // 마우스 휠로 카메라를 줌 시키는 속도 입니다. 기본값(Float)은 1입니다.
+            controls.panSpeed = -0.8; // 패닝 속도 입니다. 기본값(Float)은 1입니다.
+            controls.minDistance = 500; // 마우스 휠로 카메라 거리 조작시 최소 값. 기본값(Float)은 0 입니다.
+            controls.maxDistance = 500; // 마우스 휠로 카메라 거리 조작시 최대 값. 기본값(Float)은 무제한 입니다.
+            controls.enablePan = false;
+            controls.enableDamping = true;
+
+
+            document
+                .body
+                .appendChild(renderer.domElement);
+            renderer.render(scene, camera);
+            function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
+            }
+            animate();
+        </script>
+    </body>
+</html>
