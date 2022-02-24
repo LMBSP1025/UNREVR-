@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  scrollbar-width: none;
+  font-family:'Noto Sans KR', sans-serif;
+}
+@font-face {
+  font-family: 'SUIT-Heavy';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Heavy.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+canvas {
+  width: 0vw;
+  display: block;
+}
+#intro{
+  height: 100vh;
+  width: 42vw;
+  z-index: 20;
+  position:absolute;
+  top:0px;
+  margin-left: 10vw;
+}
+::-webkit-scrollbar {
+  display: none; 
+}
+#innerintro{
+  width: 100%;
+  position: absolute;
+  font-family: 'SUIT-Heavy';
+  font-size: 7vw;
+  color: white;
+  line-height: 7vw;
+  bottom: 0;
+  margin-bottom: 50%;
+}
