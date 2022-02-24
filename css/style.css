@@ -12,13 +12,15 @@ body {
 canvas {
   width: 0vw;
   display: block;
+  position: fixed;
+  top: 0px;
 }
 #intro{
+  position: fixed;
+  top: 0;
   height: 100vh;
   width: 42vw;
   z-index: 20;
-  position:absolute;
-  top:0px;
   margin-left: 10vw;
 }
 ::-webkit-scrollbar {
@@ -33,4 +35,34 @@ canvas {
   line-height: 7vw;
   bottom: 0;
   margin-bottom: 50%;
+}
+#first{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: white;
+  top:110vh;
+  z-index: 30;
+}
+#header{
+  width: 100%;
+  z-index: 50;
+  height: 60px;
+  padding: 1rem;
+  background-color: #9187ad;
+  opacity: 80%;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+#header li{
+  border-left: 1px solid #c0c0c0;
+  padding: 0px 20px 0px 20px;
+  margin: 10px 100px 10px 100px;
+}
+* {
+  box-sizing: border-box;
 }

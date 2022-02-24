@@ -14,20 +14,41 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap"
             rel="stylesheet">
-    </head>
-    <body>
-
         <script src="js/three.js"></script>
         <script src="node_modules\three\examples\js\controls\OrbitControls.js"></script>
         <script src="node_modules\three\examples\js\libs\fflate.min.js"></script>
         <script src="node_modules\three\examples\js\loaders\FBXLoader.js"></script>
         <script src="node_modules\three\examples\js\helpers\RectAreaLightHelper.js"></script>
+        <script src="node_modules1\scrollreveal\dist\scrollreveal.min.js"></script>
+    </head>
+
+
+    <body>
+        <div id="header">
+            <img src="img/대지 1@0.75x.png" alt="" style="width: 60px; height: 60px;">
+            <nav>
+                    <li style="display:inline">홈</li>
+                    <li style="display:inline">포트폴리오</li>
+                    <li style="display:inline">부원</li>
+            </nav>
+        </div>
+        <script src="js\script.js?ver=123"></script>
+
         <div id="intro">
             <div id="innerintro">
-                당신의 모든<br>  
+                당신의 모든<br>
                 상상을 현실로.<br>
             </div>
         </div>
-        <script src="js\script.js?ver=123"></script>
+        <div id="first"></div>
+        <script>
+
+            ScrollReveal().reveal('#innerintro', {
+                distance: '50%',
+                origin: 'bottom',
+                reset: true
+            });
+            
+        </script>
     </body><br>
 </html>

@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "fflate": "^0.7.3"
+    "fflate": "^0.7.3",
+    "scrollreveal": "^4.0.9"
   }
 }
