@@ -20,16 +20,16 @@
         <script src="node_modules\three\examples\js\loaders\FBXLoader.js"></script>
         <script src="node_modules\three\examples\js\helpers\RectAreaLightHelper.js"></script>
         <script src="node_modules1\scrollreveal\dist\scrollreveal.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
-
 
     <body>
         <div id="header">
             <img src="img/대지 1@0.75x.png" alt="" style="width: 60px; height: 60px;">
             <nav>
-                    <li style="display:inline">홈</li>
-                    <li style="display:inline">포트폴리오</li>
-                    <li style="display:inline">부원</li>
+                <li style="display:inline">홈</li>
+                <li style="display:inline">포트폴리오</li>
+                <li style="display:inline">부원</li>
             </nav>
         </div>
         <script src="js\script.js?ver=123"></script>
@@ -42,25 +42,29 @@
             </div>
         </div>
 
-
         <div id="first">
             <div class="header">
                 <img src="img/대지 2@0.75x.png" alt="" style="width: 60px; height: 60px;">
                 <nav>
-                        <li style="display:inline">홈</li>
-                        <li style="display:inline">포트폴리오</li>
-                        <li style="display:inline">부원</li>
+                    <li style="display:inline">홈</li>
+                    <li style="display:inline">포트폴리오</li>
+                    <li style="display:inline">부원</li>
                 </nav>
             </div>
         </div>
         <script>
-
+            const canvas = document.querySelector('canvas');
+            canvas.onclick = function (event) { 
+                const offset = $("#first").offset();
+                $('html, body').animate({
+                    scrollTop: offset.top
+                }, 1000);
+            }
             ScrollReveal().reveal('#innerintro', {
                 distance: '50%',
                 origin: 'bottom',
                 reset: true
             });
-            
         </script>
     </body><br>
 </html>

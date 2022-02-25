@@ -66,7 +66,7 @@ function onPointerMove(event) {
 
 }
 function animate() {
-    if(matchMedia("screen and (min-width:770)").matches){
+    if(matchMedia("screen and (min-width:770px)").matches){
         camera.position.x += (mouseX - camera.position.x) * 0.03;
         camera.position.y += (-mouseY - camera.position.y) * 0.03 + 5;
     }
