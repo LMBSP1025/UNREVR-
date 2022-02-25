@@ -8,6 +8,11 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous">
+        <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
             crossorigin="crossorigin">
@@ -24,53 +29,82 @@
     </head>
 
     <body>
-        <nav class="navbar" aria-label="Third navbar example">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">UNREVR</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-        
-              <div class="collapse navbar-collapse" id="navbarsExample03">
-                <ul class="navbar-nav me-auto mb-2 mb-sm-0" >
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">홈</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">포트폴리오</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">부원</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        <script src="js\script.js?ver=123"></script>
-        <div id="title">
-            <div id="intro">
-                <div id="innerintro">
-                    당신의 모든<br>
-                    상상을 현실로.<br>
-                </div>
-            </div>
-        </div>
 
-        <div id="first">
-        </div>
-        <script>
-            const canvas = document.querySelector('#title');
-            canvas.onclick = function (event) {
-                const offset = $("#first").offset();
-                $('html, body').animate({
-                    scrollTop: offset.top
-                }, 1000);
-            }
-            ScrollReveal().reveal('#innerintro', {
-                distance: '50%',
-                origin: 'bottom',
-                reset: true
-            });
-        </script>
-    </body><br>
-</html>
+        <nav class="navbar navbar-expand-sm navbar-custombg-dark fixed-top">
+            <div class="container-fluid">
+                <img src="img\대지 1@0.75x.png" alt="" style="width: 50px; height: 50px;">
+                <a
+                    class="navbar-brand"
+                    href="#"
+                    style="color: white;font-family: 'SUIT-Heavy';">UNREVR</a>
+                <button
+                    class="navbutton"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDarkDropdown"
+                    aria-controls="navbarNavDarkDropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <svg width="50" height="50" viewBox="0 0 100 100">
+                        <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                        <path class="line line2" d="M 20,50 H 80" />
+                        <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                      </svg>
+                    </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav  navbar-custom">
+                                <li class="navtext">
+                                    <a
+                                        class="dropdown-item navtext"
+                                        href="#"
+                                        style="color: white;font-family: 'SUIT-Heavy';">홈</a>
+                                </li>
+                                <li class="navtext">
+                                    <a
+                                        class="dropdown-item navtext"
+                                        href="Portfolio.html"
+                                        style="color: white;font-family: 'SUIT-Heavy';">포트폴리오</a>
+                                </li>
+                                <li class="navtext">
+                                    <a
+                                        class="dropdown-item navtext"
+                                        href="#"
+                                        style="color: white;font-family: 'SUIT-Heavy';">부원</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <script src="js\script.js?ver=123"></script>
+                <div id="title">
+                    <div id="intro">
+                        <div id="innerintro">
+                            당신의 모든<br>
+                            상상을 현실로.<br>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="first"></div>
+                <script>
+                    const canvas = document.querySelector('#title');
+                    canvas.onclick = function (event) {
+                        const offset = $("#first").offset();
+                        $('html, body').animate({
+                            scrollTop: offset.top
+                        }, 1000);
+                    }
+                    ScrollReveal().reveal('#innerintro', {
+                        distance: '50%',
+                        origin: 'bottom',
+                        reset: true
+                    });
+                </script>
+                <script
+                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                    crossorigin="anonymous"></script>
+            </body><br>
+        </html>

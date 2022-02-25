@@ -22,7 +22,7 @@ loader.load('model/Untitled 1.fbx', object => {
 
 var renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x8682a8);
+renderer.setClearColor(0x8076a2);
 
 camera
     .position
@@ -58,13 +58,13 @@ function onPointerMove(event) {
     if (event.isPrimary === false) 
         return;
     
-        mouseX = (event.clientX - windowHalfX) / 16;
-        mouseY = (event.clientY - windowHalfY) / 16;
+    mouseX = (event.clientX - windowHalfX) / 16;
+    mouseY = (event.clientY - windowHalfY) / 16;
 
 }
 function animate() {
-        camera.position.x += (mouseX - camera.position.x) * 0.03;
-        camera.position.y += (-mouseY - camera.position.y) * 0.03 + 5;
+    camera.position.x += (mouseX - camera.position.x) * 0.03;
+    camera.position.y += (-mouseY - camera.position.y) * 0.03 + 5;
 
     camera.position.z = 400;
     camera.lookAt(scene.position);
@@ -72,3 +72,25 @@ function animate() {
     renderer.render(scene, camera);
 }
 animate();
+var target = document.getElementById("menu");
+var target1 = document.getElementById("undermenu");
+var target3 = document.getElementById("burger");
+var target4 = document.getElementById("underburger");
+target.style.display = "block";
+target1.style.display = "none";
+target3.style.display = "inline-block";
+target4.style.display = "none";
+$(window).scroll(function () {
+    if ($(window).scrollTop() - $('#first').offset().top > 0) {
+        target.style.display = "none";
+        target1.style.display = "block";
+        target3.style.display = "none";
+target4.style.display = "inline-block";
+        
+    } else {
+        target.style.display = "block";
+        target1.style.display = "none";
+        target3.style.display = "inline-block";
+target4.style.display = "none";
+    }
+})
