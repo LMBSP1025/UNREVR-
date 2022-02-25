@@ -1,78 +1,76 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="home is-chrome has-mouse has-touch sr">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>공방</title>
-        <style>
-            body {
-                margin: 0;
-            }
-            canvas {
-                display: block;
-            }
-        </style>
-    </head>
-    <body>
+        <title>UNREVR</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="crossorigin">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap"
+            rel="stylesheet">
         <script src="js/three.js"></script>
         <script src="node_modules\three\examples\js\controls\OrbitControls.js"></script>
         <script src="node_modules\three\examples\js\libs\fflate.min.js"></script>
         <script src="node_modules\three\examples\js\loaders\FBXLoader.js"></script>
+        <script src="node_modules\three\examples\js\helpers\RectAreaLightHelper.js"></script>
+        <script src="node_modules1\scrollreveal\dist\scrollreveal.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar" aria-label="Third navbar example">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">UNREVR</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="collapse navbar-collapse" id="navbarsExample03">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0" >
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">홈</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">포트폴리오</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">부원</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <script src="js\script.js?ver=123"></script>
+        <div id="title">
+            <div id="intro">
+                <div id="innerintro">
+                    당신의 모든<br>
+                    상상을 현실로.<br>
+                </div>
+            </div>
+        </div>
+
+        <div id="first">
+        </div>
         <script>
-
-            var scene = new THREE.Scene();
-            var camera = new THREE.PerspectiveCamera(
-                45,
-                window.innerWidth / window.innerHeight,
-                1,
-                10000
-            );
-            // instantiate a loader
-            const loader = new THREE.FBXLoader();
-
-            // load a resource
-            loader.load('Untitled 1.fbx', object => {
-                this
-                    .scene
-                    .add(object)
-            });
-            var renderer = new THREE.WebGLRenderer({antialias: true});
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setClearColor(0xAAeeff);
-
-            var spotLight = new THREE.SpotLight(0xffffff);
-            spotLight
-                .position
-                .set(10, 200, 200);
-            scene.add(spotLight);
-
-            const controls = new THREE.OrbitControls(camera, renderer.domElement);
-            controls
-                .target
-                .set(0, 90, 0);
-            camera
-                .position
-                .set(300, 200, 500);
-            controls.update();
-            controls.rotateSpeed = -0.2; // 마우스로 카메라를 회전시킬 속도입니다. 기본값(Float)은 1입니다.
-            controls.zoomSpeed = 1.2; // 마우스 휠로 카메라를 줌 시키는 속도 입니다. 기본값(Float)은 1입니다.
-            controls.panSpeed = -0.8; // 패닝 속도 입니다. 기본값(Float)은 1입니다.
-            controls.minDistance = 500; // 마우스 휠로 카메라 거리 조작시 최소 값. 기본값(Float)은 0 입니다.
-            controls.maxDistance = 500; // 마우스 휠로 카메라 거리 조작시 최대 값. 기본값(Float)은 무제한 입니다.
-            controls.enablePan = false;
-            controls.enableDamping = true;
-
-            document
-                .body
-                .appendChild(renderer.domElement);
-            renderer.render(scene, camera);
-            function animate() {
-                requestAnimationFrame(animate);
-                controls.update();
-                renderer.render(scene, camera);
+            const canvas = document.querySelector('#title');
+            canvas.onclick = function (event) {
+                const offset = $("#first").offset();
+                $('html, body').animate({
+                    scrollTop: offset.top
+                }, 1000);
             }
-            animate();
+            ScrollReveal().reveal('#innerintro', {
+                distance: '50%',
+                origin: 'bottom',
+                reset: true
+            });
         </script>
-    </body>
+    </body><br>
 </html>

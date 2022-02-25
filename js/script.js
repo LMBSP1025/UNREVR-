@@ -14,7 +14,7 @@ const camera = new THREE.OrthographicCamera(
 );
 scene.add(camera);
 const loader = new THREE.FBXLoader();
-loader.load('Untitled 1.fbx', object => {
+loader.load('model/Untitled 1.fbx', object => {
     this
         .scene
         .add(object)
@@ -22,7 +22,7 @@ loader.load('Untitled 1.fbx', object => {
 
 var renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x8884aa);
+renderer.setClearColor(0x8682a8);
 
 camera
     .position
@@ -45,8 +45,6 @@ window.onresize = function () {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
 }
-
-document.body.style.touchAction = 'none';
 document
     .body
     .addEventListener('pointermove', onPointerMove);
@@ -55,21 +53,18 @@ document
     .appendChild(renderer.domElement);
 
 renderer.render(scene, camera);
-
 function onPointerMove(event) {
 
     if (event.isPrimary === false) 
         return;
     
-    mouseX = (event.clientX - windowHalfX) / 16;
-    mouseY = (event.clientY - windowHalfY) / 16;
+        mouseX = (event.clientX - windowHalfX) / 16;
+        mouseY = (event.clientY - windowHalfY) / 16;
 
 }
 function animate() {
-    if(matchMedia("screen and (min-width:770px)").matches){
         camera.position.x += (mouseX - camera.position.x) * 0.03;
         camera.position.y += (-mouseY - camera.position.y) * 0.03 + 5;
-    }
 
     camera.position.z = 400;
     camera.lookAt(scene.position);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="home is-chrome has-mouse has-touch sr">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,14 +24,13 @@
     </head>
 
     <body>
-        <div id="header">
-            <img src="img/대지 1@0.75x.png" alt="" style="width: 60px; height: 60px;">
-            <nav>
-                <li style="display:inline">홈</li>
-                <li style="display:inline">포트폴리오</li>
-                <li style="display:inline">부원</li>
-            </nav>
-        </div>
+        <nav id="menu">
+            <ul>
+                <li><a class="link" href="/Portfolio">홈</a></li>
+                <li><a class="link" href="#">포트폴리오</a></li>
+                <li><a class="link" href="#">부원</a></li>
+            </ul>
+        </nav>
         <script src="js\script.js?ver=123"></script>
         <div id="title">
             <div id="intro">
@@ -43,18 +42,10 @@
         </div>
 
         <div id="first">
-            <div class="header">
-                <img src="img/대지 2@0.75x.png" alt="" style="width: 60px; height: 60px;">
-                <nav>
-                    <li style="display:inline">홈</li>
-                    <li style="display:inline">포트폴리오</li>
-                    <li style="display:inline">부원</li>
-                </nav>
-            </div>
         </div>
         <script>
-            const canvas = document.querySelector('canvas');
-            canvas.onclick = function (event) { 
+            const canvas = document.querySelector('#title');
+            canvas.onclick = function (event) {
                 const offset = $("#first").offset();
                 $('html, body').animate({
                     scrollTop: offset.top
