@@ -22,7 +22,7 @@ loader.load('Untitled 1.fbx', object => {
 
 var renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x9187ad);
+renderer.setClearColor(0x8884aa);
 
 camera
     .position
@@ -43,8 +43,6 @@ window.onresize = function () {
     camera.updateProjectionMatrix();
 
     renderer.setSize(window.innerWidth, window.innerHeight);
-
-    renderer2.setSize(window.innerWidth, window.innerHeight);
 
 }
 
@@ -68,9 +66,12 @@ function onPointerMove(event) {
 
 }
 function animate() {
-    camera.position.x += (mouseX - camera.position.x) * 0.03;
-    camera.position.y += (-mouseY - camera.position.y) * 0.03 + 5;
-    camera.position.z = 500;
+    if(matchMedia("screen and (min-width:770)").matches){
+        camera.position.x += (mouseX - camera.position.x) * 0.03;
+        camera.position.y += (-mouseY - camera.position.y) * 0.03 + 5;
+    }
+
+    camera.position.z = 400;
     camera.lookAt(scene.position);
     requestAnimationFrame(animate);
     renderer.render(scene, camera);

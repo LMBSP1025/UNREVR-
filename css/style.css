@@ -18,13 +18,17 @@ canvas {
 #intro{
   position: fixed;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 42vw;
   z-index: 20;
   margin-left: 10vw;
 }
 ::-webkit-scrollbar {
   display: none; 
+}
+#title{
+  width: 100vw;
+ height: 100vh;
 }
 #innerintro{
   width: 100%;
@@ -34,7 +38,7 @@ canvas {
   color: white;
   line-height: 7vw;
   bottom: 0;
-  margin-bottom: 50%;
+  margin-bottom: 43vh;
 }
 #first{
   height: 100vh;
@@ -46,19 +50,45 @@ canvas {
 }
 #header{
   width: 100%;
-  z-index: 50;
+  z-index: 30;
   height: 60px;
   padding: 1rem;
-  background-color: #9187ad;
-  opacity: 80%;
+  background-blend-mode:difference;
+  opacity: 90%;
   color: white;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
+.header{
+  width: 100%;
+  z-index: 20;
+  height: 60px;
+  padding: 1rem;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+#backheader{
+  width: 100%;
+  z-index: 50;
+  height: 60px;
+
+}
+
 #header li{
+  border-left: 1px solid #c0c0c0;
+  padding: 0px 20px 0px 20px;
+  margin: 10px 100px 10px 100px;
+}
+.header li{
   border-left: 1px solid #c0c0c0;
   padding: 0px 20px 0px 20px;
   margin: 10px 100px 10px 100px;
