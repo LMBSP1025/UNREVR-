@@ -72,25 +72,58 @@ function animate() {
     renderer.render(scene, camera);
 }
 animate();
-var target = document.getElementById("menu");
-var target1 = document.getElementById("undermenu");
-var target3 = document.getElementById("burger");
-var target4 = document.getElementById("underburger");
-target.style.display = "block";
-target1.style.display = "none";
-target3.style.display = "inline-block";
-target4.style.display = "none";
-$(window).scroll(function () {
-    if ($(window).scrollTop() - $('#first').offset().top > 0) {
-        target.style.display = "none";
-        target1.style.display = "block";
-        target3.style.display = "none";
-target4.style.display = "inline-block";
-        
-    } else {
-        target.style.display = "block";
-        target1.style.display = "none";
-        target3.style.display = "inline-block";
-target4.style.display = "none";
-    }
+
+
+var mHtml = $("html");
+var page = 1;
+
+
+
+mHtml.animate({scrollTop : 0},10);
+
+$(window).on("whell",function(e){
+    var posTop =(page-1)*$(window).height();
+    mHtml.animate({scrollTop : posTop});
 })
+
+window.onload = function(){
+    const elm = document.querySelectorAll('.section');
+    const elmCount = elm.length;
+    elm.forEach(function(item, index){
+      item.addEventListener('mousewheel', function(event){
+        event.preventDefault();
+        let delta = 0;
+
+        if (!event) event = window.event;
+        if (event.wheelDelta) {
+            delta = event.wheelDelta / 120;
+            if (window.opera) delta = -delta;
+        } 
+        else if (event.detail)
+            delta = -event.detail / 3;
+
+        let moveTop = window.scrollY;
+        let elmSelector = elm[index];
+
+        // 아래로 스크롤하면 내려가기
+        if (delta < 0){
+          if (elmSelector !== elmCount-1){
+            try{
+              moveTop = window.pageYOffset + elmSelector.nextElementSibling.getBoundingClientRect().top;
+            }catch(e){}
+          }
+        }
+        // 위로 스크롤하면 올라가기
+        else{
+          if (elmSelector !== 0){
+            try{
+              moveTop = window.pageYOffset + elmSelector.previousElementSibling.getBoundingClientRect().top;
+            }catch(e){}
+          }
+        }
+
+        const body = document.querySelector('html');
+        window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
+      });
+    });
+  }

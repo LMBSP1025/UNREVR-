@@ -3,6 +3,7 @@ body {
   scrollbar-width: none;
   font-family:'Noto Sans KR', sans-serif;
   overflow-y: scroll;
+  word-break: keep-all;
 }
 @font-face {
   font-family: 'SUIT-Heavy';
@@ -10,10 +11,17 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'SUIT-Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 canvas {
   width: 0vw;
   position:fixed;
   top:0;
+  
 }
 #intro{
   position: fixed;
@@ -45,20 +53,84 @@ canvas {
   font-size: 6vw;
   color: white;
   line-height: 6vw;
+  bottom: 0px;
 }
 #first{
-  height: 200vh;
+  height: 100vh;
   width: 100vw;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
+  margin:0 auto;
   position: relative;
-  background-color: white;
   z-index: 30;
-  top:110vh;
+  top:100vh;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  padding-top: 0px ;
+  padding-left: 80px;
+  padding-right: 80px;
+  backdrop-filter: blur(10px);
+}
+.fixed{
+  position: fixed; left: 0; top: 0;
+}
+#undernav{
+  display: none;
+}
+#second{
+  height: 100vh;
+  width: 100vw;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
+  margin:0 auto;
+  position: relative;
+  z-index: 30;
+  top:100vh;
+  background-color: rgb(119, 119, 119);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.innercontent{
+  height: 100%;
+  width: 100%;
+  padding: 80px;
+
+  position: relative;
+  font-family: 'SUIT-Heavy';
+  font-size: 60pt;
+  line-height: 60pt;
+}
+.innercontent .text{
+  width: 30%;
+  padding-right: 30px;
+  float:left;
+  
+  word-break:break-all;
+}
+.innercontent .view{
+  float:left;
+  font-family: 'Suit-Light';
+  font-size: 15pt;
+  line-height: 20pt;
+  width: 100%;
+  margin-top: 0px;
+  height: 80%;
+}
+iframe {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0px;
+  border-radius: 20px 20px 20px 20px;
+  float: right;
+  bottom: 0;
+  width: 70%;
+  height: 100%;
 }
 nav{
   width: 100%;
   z-index: 90;
   height: 60px;
-  background-color: #8076a2;
+  background-color: #8076a200;
   opacity: 80%;
   color: white;
   font-weight: bold;
@@ -68,12 +140,9 @@ nav{
   top:0;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  box-shadow: 0px 5px 10px #736f96;
+  box-shadow: 0px 5px 10px #00000028;
 }
-.navbar-custom {
-  width: 100px;
-  background-color:#8076a2;
-}
+
 .navbar-nav .navtext:hover {
   background-color:#5d597c;
 }
@@ -82,9 +151,21 @@ nav{
   display: flex;
   align-items: center;
 }
+
 .navbutton{
 
 }
+
+.content-section {
+
+}
+.content .subheading, 
+.content .paragraph {
+  opacity: 1; 
+  opacity: calc( 1 + var(--viewport-y) );
+}
+
+
 
 @media screen and (min-width: 572px) { 
   .navbutton {
@@ -105,6 +186,10 @@ nav{
     font-size: 6vw;
     color: white;
     line-height: 6vw;
+  }
+  .navbar-custom {
+    width: 100%;
+    background-color:#8076a200;
   }
 }
 @media screen and (max-width: 572px) { 
@@ -127,8 +212,23 @@ nav{
     color: white;
     line-height: 17vw;
   }
+  .navbar-custom {
+    width: 100%;
+    background-color:#685e8800;
+  }
 }
-
+@media screen and (max-width: 365px) { 
+  .innercontent{
+    height: 41vw;
+    width: 85vw;
+    padding: 30px;
+    margin:0;
+    position: relative;
+    font-family: 'SUIT-Heavy';
+    font-size: 13vw;
+    line-height: 13vw;
+  }
+}
 
 
 .line {
