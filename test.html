@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/three.js"></script>
+        <script src="node_modules\three\examples\js\controls\OrbitControls.js"></script>
+        <script src="node_modules\three\examples\js\libs\fflate.min.js"></script>
+        <script src="node_modules\three\examples\js\loaders\GLTFLoader.js"></script>
+        <script src="node_modules\three\examples\js\helpers\RectAreaLightHelper.js"></script>
+        <script src="node_modules1\scrollreveal\dist\scrollreveal.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const frustumSize = 1200;
+            var scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(
+                45,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                10000
+            );
+            scene.add(camera);
+            let loader = new THREE.GLTFLoader();
+            loader.load('model/Untitled 2.gltf', object => {
+                this
+                    .scene
+                    .add(object.scene)
+            });
+
+            var renderer = new THREE.WebGLRenderer({antialias: true});
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            light = new THREE.PointLight(0x555555, 1);
+            light.castShadow = true;
+            light
+                .position
+                .set(-0000, -0000, 1000);
+            light1 = new THREE.PointLight(0x555555, 1);
+            light1.castShadow = true;
+            scene.add(light);
+            scene.add(light1);
+            light1
+                .position
+                .set(0, 800, -300);
+
+            camera
+                .position
+                .set(80, 0, 100);
+
+            document
+                .body
+                .addEventListener('pointermove', onPointerMove);
+            document
+                .body
+                .appendChild(renderer.domElement);
+
+            renderer.render(scene, camera);
+            function onPointerMove(event) {
+
+                if (event.isPrimary === false) 
+                    return;
+                
+                mouseX = (event.clientX - windowHalfX) / 16;
+                mouseY = (event.clientY - windowHalfY) / 16;
+
+            }
+
+            function animate() {
+
+                camera.position.x += (mouseX - camera.position.x) * 0.03; camera.position.y
+                += (-mouseY - camera.position.y) * 0.03 + 5;
+
+                camera.position.z = 400;
+                camera.lookAt(scene.position);
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            var mHtml = $("html");
+            var page = 1;
+
+            mHtml.animate({
+                scrollTop: 0
+            }, 10);
+
+            $(window).on("whell", function (e) {
+                var posTop = (page - 1) * $(window).height();
+                mHtml.animate({scrollTop: posTop});
+            })
+
+            window.onload = function () {
+                const elm = document.querySelectorAll('.section');
+                const elmCount = elm.length;
+                elm.forEach(function (item, index) {
+                    item.addEventListener('mousewheel', function (event) {
+                        event.preventDefault();
+                        let delta = 0;
+
+                        if (!event) 
+                            event = window.event;
+                        if (event.wheelDelta) {
+                            delta = event.wheelDelta / 120;
+                            if (window.opera) 
+                                delta = -delta;
+                            }
+                        else if (event.detail) 
+                            delta = -event.detail / 3;
+                        
+                        let moveTop = window.scrollY;
+                        let elmSelector = elm[index];
+
+                        // 아래로 스크롤하면 내려가기
+                        if (delta < 0) {
+                            if (elmSelector !== elmCount - 1) {
+                                try {
+                                    moveTop = window.pageYOffset + elmSelector
+                                        .nextElementSibling
+                                        .getBoundingClientRect()
+                                        .top;
+                                } catch (e) {// 위로 스크롤하면 올라가기
+                                }
+                            }
+                        } else {
+                            if (elmSelector !== 0) {
+                                try {
+                                    moveTop = window.pageYOffset + elmSelector
+                                        .previousElementSibling
+                                        .getBoundingClientRect()
+                                        .top;
+                                } catch (e) {}
+                            }
+                        }
+
+                        const body = document.querySelector('html');
+                        window.scrollTo({top: moveTop, left: 0, behavior: 'smooth'});
+                    });
+                });
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<batchrender>
+  <environmentinfo>
+    <machineinfo>
+      <machinename>DESKTOP-GDD4RES</machinename>
+      <username>bigdo</username>
+      <processortype>GenuineIntel, stepping 10, model 14, instruction family 6</processortype>
+      <processorname>Intel Core i5-9300H CPU</processorname>
+      <processornumber>8</processornumber>
+      <ostype>WINDOWS 64 BIT</ostype>
+      <osversion>Windows 10, 64 Bit, Core (build 21996)</osversion>
+      <oglvendorname>NVIDIA</oglvendorname>
+      <oglrendername>NVIDIA GeForce GTX 1650</oglrendername>
+      <oglversion>12</oglversion>
+    </machineinfo>
+    <c4dinfo>
+      <c4dversion>25015</c4dversion>
+      <c4dplugins>cadexchangeconfig substanceconfig addons advanced_render alembic archigrass assetbrowser bitmapfilter bpexchange browser bugslife_client c4d_emulation c4d_viewport_render ca ca2 cadexchange clothilde collada14 collada15 colorchoosergui compositing deltamush deployment dwg dwgobjects dynamics exchanges expressiontag fbx gltf goz hair i_skp interop interop_forger io_forger io_obj metrics mkmodeler mocca model mograph motioncam motiontracker nbo nbp newman nodeeditor objects onlineupdater physx_hybrid projectassetinspector python redshift relaxuv scenemanager2 sculpt sculptbrushes shader sketch sky sla spacemouse substance teamrender thinking_particles tool_system_hybrid tpoperators usd uvviewport volumes xpressocore xtensions </c4dplugins>
+    </c4dinfo>
+  </environmentinfo>
+  <fileinfo>
+    <filename>Untitled 3.c4d</filename>
+    <filepath>C:\Users\bigdo\Documents\GitHub\UNREVR-\model</filepath>
+    <renderdatainfo>
+      <rendersettings>My Render Setting</rendersettings>
+      <take>Main</take>
+      <camera>Default Camera</camera>
+      <width>1920</width>
+      <height>1080</height>
+      <filmaspect>1.778</filmaspect>
+      <pixelaspect>1</pixelaspect>
+      <fps>30</fps>
+      <from>71</from>
+      <to>71</to>
+      <steps>1</steps>
+      <saveinfo>
+        <imagepath>C:\Users\bigdo\Desktop</imagepath>
+        <imagedepth>8</imagedepth>
+        <imageformat>MP4</imageformat>
+      </saveinfo>
+    </renderdatainfo>
+  </fileinfo>
+  <renderinfo>
+    <imageinfo frame="71">00:00:03 C:\Users\bigdo\Desktop\render.mp4</imageinfo>
+  </renderinfo>
+  <batchinfo>
+    <added>2022-02-27, &#xc624;&#xc804; 3:54:13</added>
+    <started>2022-02-27, &#xc624;&#xc804; 3:54:24</started>
+    <rendertime>00:00:04</rendertime>
+    <result>Finished</result>
+  </batchinfo>
+</batchrender>

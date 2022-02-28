@@ -1,9 +1,13 @@
+var trigger = 0;
+
 const frustumSize = 1200;
 let windowHalfX = window.innerWidth / 2;
 let windowHalfY = window.innerHeight / 2;
 let mouseX = 0,
     mouseY = 0;
+
 var scene = new THREE.Scene();
+
 const camera = new THREE.OrthographicCamera(
     window.innerWidth / - 2,
     window.innerWidth / 2,
@@ -13,33 +17,35 @@ const camera = new THREE.OrthographicCamera(
     1000
 );
 scene.add(camera);
-const loader = new THREE.FBXLoader();
-loader.load('model/Untitled 1.fbx', object => {
+
+let loader = new THREE.GLTFLoader();
+const loader1 = new THREE.FBXLoader();
+loader1.load('model/Untitled 1.fbx', object => {
     this
         .scene
         .add(object)
-});
 
+});
 var renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x8076a2);
 
 camera
     .position
-    .set(100, 100, 40);
+    .set(0, 100, 100);
 
 window.onresize = function () {
     let windowHalfX = window.innerWidth / 2;
     let windowHalfY = window.innerHeight / 2;
     let mouseX = 0,
         mouseY = 0;
+        const anim = document.getElementById("canvas");
     const aspect = window.innerWidth / window.innerHeight;
 
     camera.left = -frustumSize * aspect / 2;
     camera.right = frustumSize * aspect / 2;
     camera.top = frustumSize / 2;
     camera.bottom = -frustumSize / 2;
-
     camera.updateProjectionMatrix();
 
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -53,6 +59,7 @@ document
     .appendChild(renderer.domElement);
 
 renderer.render(scene, camera);
+
 function onPointerMove(event) {
 
     if (event.isPrimary === false) 
@@ -73,57 +80,62 @@ function animate() {
 }
 animate();
 
+$(function () {
+    const html = document.documentElement;
+    const canvas = document.getElementById("animation"); //캔버스 id 불러와야함
+    const context = canvas.getContext("2d");
+    const intro = document
+        .getElementById("second")
+        .documentElement;
 
-var mHtml = $("html");
-var page = 1;
+    const frameCount = 94; //프레임 숫자 교정하세요
 
+    const currentFrame = index => (
+        `img/프레임셋/render${index.toString().padStart(2, '0')}.jpg` //경로 수정 , $구문은 남겨야함.
 
+    )
 
-mHtml.animate({scrollTop : 0},10);
-
-$(window).on("whell",function(e){
-    var posTop =(page-1)*$(window).height();
-    mHtml.animate({scrollTop : posTop});
-})
-
-window.onload = function(){
-    const elm = document.querySelectorAll('.section');
-    const elmCount = elm.length;
-    elm.forEach(function(item, index){
-      item.addEventListener('mousewheel', function(event){
-        event.preventDefault();
-        let delta = 0;
-
-        if (!event) event = window.event;
-        if (event.wheelDelta) {
-            delta = event.wheelDelta / 120;
-            if (window.opera) delta = -delta;
-        } 
-        else if (event.detail)
-            delta = -event.detail / 3;
-
-        let moveTop = window.scrollY;
-        let elmSelector = elm[index];
-
-        // 아래로 스크롤하면 내려가기
-        if (delta < 0){
-          if (elmSelector !== elmCount-1){
-            try{
-              moveTop = window.pageYOffset + elmSelector.nextElementSibling.getBoundingClientRect().top;
-            }catch(e){}
-          }
+    const preloadImages = () => {
+        for (let i = 1; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i)
         }
-        // 위로 스크롤하면 올라가기
-        else{
-          if (elmSelector !== 0){
-            try{
-              moveTop = window.pageYOffset + elmSelector.previousElementSibling.getBoundingClientRect().top;
-            }catch(e){}
-          }
-        }
+    };
+    // Create, load and draw the image
+    const img = new Image()
+    img.src = currentFrame(1); // we'll make this dynamic in the next step, for now we'll just load image 1 of our sequence
+    // Set canvas dimensions
+    canvas.width = 1920;
+    canvas.height = 1080;
 
-        const body = document.querySelector('html');
-        window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
-      });
+    img.onload = function () {
+        context.drawImage(img, 000, 0);
+    }
+
+    const updateImage = index => {
+        img.src = currentFrame(index);
+        context.drawImage(img, 000, 0);
+    }
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = html.scrollTop - $("#second")
+            .offset()
+            .top; //scrollTop은 현재 수직위치
+        const maxScrollTop = $("#third")
+            .offset()
+            .top; //문서 스크롤 높이 - 창 높이
+        const scrollFraction = scrollTop / maxScrollTop; //현재 수직위치가 약 몇 %인지?
+        const frameIndex = Math.min(
+            frameCount - 1,
+            Math.floor(scrollFraction * frameCount)
+        );
+        if (frameIndex + 19 >= 0) {
+            if (frameIndex + 19 < 91) {
+
+                requestAnimationFrame(() => updateImage(frameIndex + 19))
+            }
+        }
     });
-  }
+    preloadImages();
+});
+

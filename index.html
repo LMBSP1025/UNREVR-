@@ -23,6 +23,7 @@
         <script src="node_modules\three\examples\js\controls\OrbitControls.js"></script>
         <script src="node_modules\three\examples\js\libs\fflate.min.js"></script>
         <script src="node_modules\three\examples\js\loaders\FBXLoader.js"></script>
+        <script src="node_modules\three\examples\js\loaders\GLTFLoader.js"></script>
         <script src="node_modules\three\examples\js\helpers\RectAreaLightHelper.js"></script>
         <script src="node_modules1\scrollreveal\dist\scrollreveal.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -103,10 +104,12 @@
                     <span class="navbar-toggler-icon"></span>
                     <svg width="50" height="50" viewbox="0 0 100 100">
                         <path
+                            style="stroke: black;"
                             class="line line1"
                             d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"/>
-                        <path class="line line2" d="M 20,50 H 80"/>
+                        <path style="stroke: black;" class="line line2" d="M 20,50 H 80"/>
                         <path
+                            style="stroke: black;"
                             class="line line3"
                             d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
                     </svg>
@@ -148,30 +151,58 @@
 
         <div id="first" class="section">
             <div class="innercontent">
-                <div class="text">
-                    언리버를 <br>소개합니다.<br>
+                <div class="head">
+                    언리버를
+                    <br>소개합니다.<br>
                 </div>
-                
+
                 <div class="view">
-                    <hr style="border: solid 3px rgba(0, 0, 0, 0.637);">
                     <div class="text">
-                        언리버는 다양한 정보 분야의 기술로 과학 컨텐츠를 제작하여 과학 대중화에 기여하는 융합과학동아리입니다. <br> <br>
-                        학기 중 부원들과 팀을 구성하여 과학과 관련된 어플리케이션, 게임 등을 제작하고 결과물을 많은 사람들에게 공유하는 것을 목표로 합니다.
+                        언리버는 다양한 정보 분야의 기술로 과학 컨텐츠를 제작하여 과학 대중화에 기여하는 융합과학동아리입니다.
+                        <br>
+                        <br>
+                        학기 중 선후배를 포함한 부원들과 함께 팀을 구성하여 과학과 관련된 어플리케이션, 게임 등을 제작하고 결과물을 많은 사람들에게 공유하는 것을
+                        목표로 합니다.
+                        <br>
+                        <br>
+                        또한 언리버는 주기적인 세미나를 통해 프로젝트 진행 과정에서 필요한 지식들을 배우며 끈임없이 성장합니다.
                     </div>
                     <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/rjLjxZ-bchI?controls=0"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen="allowfullscreen"></iframe>
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/rjLjxZ-bchI?controls=0"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen="allowfullscreen"></iframe>
                 </div>
             </div>
         </div>
+        
         <div id="second" class="section">
-            <div class="innercontent">
+            <div id="canvas" style="position:absolute; left:50%; margin-left: -960px; width: 1920px; height: 1px;">
+                <canvas id="animation"></canvas>
+            </div>
+            <div class="innercontents">
 
+                <div class="innercontent">
+                    <div id="innerintro">
+                        2021
+                        <br>최고의 동아리.
+                    </div>
+                    <div class="text">
+                        지난 2021년, 한 해간 북과학고의 모든 과학동아리에서 진행한 프로젝트들을 선보일 수 있었던 과학동아리학술발표회,
+                        <br><br>언리버는 웹 기반 텍스트 어드밴쳐 게임 『탈출,경기북』과 C++ 단일 언어로 개발한 『다이노게임』을 비롯한 다양한 컨텐츠를 내세워
+                            학생 대상 투표 1위를 기록했습니다.
+                    </div>
+                </div>
+            </div>
+            <div class="blur"></div>
+        </div>
+        <div id="third" class="section">
+            <div class="innercontent">
+                <div class="head" style="color: white; text-align: right;">창의적인 생각, <br>모두 언리버로부터.</div>
+                
             </div>
         </div>
         <script>
@@ -185,16 +216,15 @@
                     down.style.display = "flex";
                 } else {}
             })
-
-            ScrollReveal().reveal('#innerintro', {
-                distance: '50%',
-                origin: 'bottom',
-                reset: true
-            });
             ScrollReveal().reveal('.innercontent', {
-                distance: '50%',
                 origin: 'bottom',
-                reset: true
+                reset: true,
+                delay: '120'
+            });
+            ScrollReveal().reveal('.innercontents', {
+                origin: 'bottom',
+                reset: true,
+                delay: '120'
             });
         </script>
         <script

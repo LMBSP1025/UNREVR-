@@ -56,19 +56,100 @@ canvas {
   bottom: 0px;
 }
 #first{
-  height: 100vh;
+  height: 130vh;
+  width: 100vw;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
+  margin:0 auto;
+  position: relative;
+  z-index: 50;
+  top:100vh;
+  padding-top: 80px;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border-radius: 30px 30px 0px 0px;
+  
+}
+#second{
+  height: 130vh;
+  width: 100vw;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
+  margin:0 auto;
+  position: relative;
+  z-index: 51;
+  top:95vh;
+  background-color: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
+  border-radius: 30px 30px 0px 0px;
+  overflow: hidden;
+}
+.blur{
+  height: 30vh;
   width: 100vw;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
   margin:0 auto;
   position: relative;
   z-index: 30;
-  top:100vh;
-  background-color: rgb(255, 255, 255);
+  top: 0;
   overflow: hidden;
+  background-color: rgb(255, 255, 255);
   padding-top: 0px ;
-  padding-left: 80px;
-  padding-right: 80px;
-  backdrop-filter: blur(10px);
+  box-shadow: 0px -100px 100px #ffffff;
+}
+#animation{
+  position:absolute;
+  display: inline;
+  height: auto;
+  width: auto;
+}
+#second #innerintro{
+  width: 45%;
+  float: left;
+  height: 100vh;
+  font-family: 'SUIT-Heavy';
+  font-size: 55pt;
+  color: rgb(255, 255, 255);
+  line-height: 55pt;
+  text-shadow: 0px 0px 15px #0000007c;
+}
+.innercontents .text{
+  width: 44%;
+  height: 100vh;
+  float: left;
+  margin-left: 50%;
+  font-family: 'SUIT-Light';
+  font-size: 15pt;
+  color: rgb(0, 0, 0);
+  line-height: 20pt;
+  text-align: left;
+  text-shadow: 0px 0px 15px #0000004b;
+  position : absolute;
+  display: block;
+}
+#second .innercontents{
+  height: 100vh;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  z-index: 50;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+}
+
+#third{
+  height: 200vh;
+  width: 100vw;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
+  margin:0 auto;
+  position: relative;
+  z-index: 52;
+  top: 90vh;
+  overflow: hidden;
+  background-color: rgb(223, 138, 138);
+  padding-top: 80px;
+  border-radius: 30px 30px 0px 0px;
 }
 .fixed{
   position: fixed; left: 0; top: 0;
@@ -76,56 +157,55 @@ canvas {
 #undernav{
   display: none;
 }
-#second{
-  height: 100vh;
-  width: 100vw;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif; 
-  margin:0 auto;
-  position: relative;
-  z-index: 30;
-  top:100vh;
-  background-color: rgb(119, 119, 119);
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-}
 
 .innercontent{
-  height: 100%;
-  width: 100%;
-  padding: 80px;
+  height: 100vh;
+  width: 1100px;
+  margin: 0 auto;
+  padding-top: 90px;
+  display: block;
 
+}
+
+#second canvas{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin: 0 auto;
+}
+.innercontent .head{
   position: relative;
   font-family: 'SUIT-Heavy';
   font-size: 60pt;
   line-height: 60pt;
 }
 .innercontent .text{
-  width: 30%;
+  width: 44%;
   padding-right: 30px;
   float:left;
-  
   word-break:break-all;
 }
 .innercontent .view{
   float:left;
   font-family: 'Suit-Light';
-  font-size: 15pt;
-  line-height: 20pt;
+  font-size: 14pt;
+  line-height: 19pt;
   width: 100%;
-  margin-top: 0px;
-  height: 80%;
+  margin-top: 30px;
+  height: 60%;
 }
 iframe {
   position: relative;
   top: 0;
   left: 0;
   padding: 0px;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 10px 10px 10px 10px;
   float: right;
   bottom: 0;
-  width: 70%;
+  width: 55%;
   height: 100%;
 }
+
 nav{
   width: 100%;
   z-index: 90;
