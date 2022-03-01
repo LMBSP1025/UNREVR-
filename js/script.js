@@ -91,7 +91,7 @@ $(function () {
     const frameCount = 94; //프레임 숫자 교정하세요
 
     const currentFrame = index => (
-        `img/프레임셋/render${index.toString().padStart(2, '0')}.jpg` //경로 수정 , $구문은 남겨야함.
+        `img/프레임셋/render${index.toString().padStart(4, '0')}.jpg` //경로 수정 , $구문은 남겨야함.
 
     )
 
@@ -129,11 +129,8 @@ $(function () {
             frameCount - 1,
             Math.floor(scrollFraction * frameCount)
         );
-        if (frameIndex + 19 >= 0) {
-            if (frameIndex + 19 < 91) {
-
+        if (frameIndex + 19 >= 0 && frameIndex + 19 < 91) {
                 requestAnimationFrame(() => updateImage(frameIndex + 19))
-            }
         }
     });
     preloadImages();
