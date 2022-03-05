@@ -14,7 +14,7 @@ const camera = new THREE.OrthographicCamera(
     window.innerHeight / 2,
     window.innerHeight / - 2,
     1,
-    1000
+    100000
 );
 scene.add(camera);
 
@@ -24,7 +24,7 @@ loader1.load('model/Untitled 1.fbx', object => {
     this
         .scene
         .add(object)
-
+    object.position.set(-300,0,0)
 });
 var renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -105,16 +105,16 @@ $(function () {
     const img = new Image()
     img.src = currentFrame(1); // we'll make this dynamic in the next step, for now we'll just load image 1 of our sequence
     // Set canvas dimensions
-    canvas.width = 1920;
+    canvas.width = 1200;
     canvas.height = 1080;
 
     img.onload = function () {
-        context.drawImage(img, 000, 0);
+        context.drawImage(img, -400, 0);
     }
 
     const updateImage = index => {
         img.src = currentFrame(index);
-        context.drawImage(img, 000, 0);
+        context.drawImage(img, -400, 0);
     }
 
     window.addEventListener('scroll', () => {
@@ -136,3 +136,13 @@ $(function () {
     preloadImages();
 });
 
+$(window).scroll(function(){
+
+	var Top = $(this).scrollTop(); // 실시간 스크롤 값
+
+ 
+ 	if(Top > $("#third").offset().top-580){
+		$("#sec").css({top : -(Top-$("#third").offset().top)-500}); // animate 또는 (CSS + transition)
+	}
+
+});
