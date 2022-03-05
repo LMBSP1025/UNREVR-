@@ -521,8 +521,8 @@ nav {
         position: relative;
         font-family: 'SUIT-Heavy';
         float: left;
-        font-size: 40pt;
-        line-height: 40pt;
+        font-size: 30pt;
+        line-height: 30pt;
         word-break: keep-all;
     }
     .innercontent .text {
@@ -570,17 +570,20 @@ nav {
     #third .innercontent .text {
         width: 100%;
         word-break: break-all;
+        
+        font-size: 13pt;
+        line-height: 16pt;
     }
     #fourth .innercontent .text {
         word-break: keep-all;
         width: 100%;
+        font-size: 13pt;
+        line-height: 16pt;
     }
     .innercontent .text {
         margin-top: 20px;
         float: left;
         font-family: 'SUIT-Medium';
-        font-size: 13pt;
-        line-height: 19pt;
         width: 100%;
         word-break: keep-all;
     }
@@ -591,8 +594,8 @@ nav {
         overflow: hidden;
         text-align: left;
         font-family: 'SUIT-Heavy';
-        font-size: 30pt;
-        line-height: 30pt;
+        font-size: 20pt;
+        line-height: 20pt;
         margin-top: 30px;
         background-color: rgb(255, 255, 255);
         border-radius: 30px 30px 30px 30px;
