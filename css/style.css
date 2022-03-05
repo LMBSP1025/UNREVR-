@@ -667,6 +667,22 @@ nav {
         top: 0;
         backdrop-filter: blur(10px);
     }
+    .blur {
+        height: 0;
+        width: 0;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        position: relative;
+        z-index: 30;
+        margin: 0 auto;
+        top: 0;
+        overflow: hidden;
+        background-color: rgb(255, 255, 255);
+        padding-top: 0;
+        box-shadow: 0 -100px 100px #ffffff;
+    }
+    #canvas{
+        opacity: 50%;
+    }
 }
 @media screen and (min-width: 572px) {
     .navbutton {
