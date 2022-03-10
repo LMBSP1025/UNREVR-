@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNREVR | 404</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="img/AnyConv.com__대지 1 (2).ico">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin="crossorigin">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap"
+        rel="stylesheet">
+    <script src="js/three.js"></script>
+    <script src="node_modules\three\examples\js\controls\OrbitControls.js"></script>
+    <script src="node_modules\three\examples\js\libs\fflate.min.js"></script>
+    <script src="node_modules\three\examples\js\loaders\FBXLoader.js"></script>
+    <script src="node_modules\three\examples\js\loaders\GLTFLoader.js"></script>
+    <script src="node_modules\three\examples\js\helpers\RectAreaLightHelper.js"></script>
+    <script src="node_modules1\scrollreveal\dist\scrollreveal.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <nav
+    class="navbar navbar-expand-sm navbar-custombg-dark fixed-top"
+    id="uppernav">
+    <div class="container-fluid">
+        <img src="img\대지 1@0.5x.png" alt="" style="width: 50px; height: 50px;">
+        <a
+            class="navbar-brand"
+            href="#"
+            style="color: white;font-family: 'SUIT-Heavy';">UNREVR</a>
+        <button
+            class="navbutton"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDarkDropdown"
+            aria-controls="navbarNavDarkDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <svg width="50" height="50" viewbox="0 0 100 100">
+                <path
+                    class="line line1"
+                    d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"/>
+                <path class="line line2" d="M 20,50 H 80"/>
+                <path
+                    class="line line3"
+                    d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
+            </svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav  navbar-custom">
+                <li class="navtext">
+                    <a
+                        class="dropdown-item navtext"
+                        href="index.html"
+                        style="color: white;font-family: 'SUIT-Heavy';">홈</a>
+                </li>
+                <li class="navtext">
+                    <a
+                        class="dropdown-item navtext"
+                        href="404.html"
+                        style="color: white;font-family: 'SUIT-Heavy';">포트폴리오</a>
+                </li>
+                <li class="navtext">
+                    <a
+                        class="dropdown-item navtext"
+                        href="404.html"
+                        style="color: white;font-family: 'SUIT-Heavy';">부원</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+        <div id="title">
+            <div id="intro">
+                <div id="innerintro">
+                    페이지를<br>
+                    찾을 수 없습니다.<br>
+                </div>
+            </div>
+        </div>
+
+    <script>
+        var trigger = 0;
+
+const frustumSize = 1200;
+let windowHalfX = window.innerWidth / 2;
+let windowHalfY = window.innerHeight / 2;
+let mouseX = 0,
+    mouseY = 0;
+
+var scene = new THREE.Scene();
+
+const camera = new THREE.OrthographicCamera(
+    window.innerWidth / - 2,
+    window.innerWidth / 2,
+    window.innerHeight / 2,
+    window.innerHeight / - 2,
+    1,
+    100000
+);
+scene.add(camera);
+
+let loader = new THREE.GLTFLoader();
+const loader1 = new THREE.FBXLoader();
+loader1.load('model/Untitled 4.fbx', object => {
+    this
+        .scene
+        .add(object)
+    object.position.set(000,0,-100)
+});
+var renderer = new THREE.WebGLRenderer({antialias: true});
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x8076a2);
+
+camera
+    .position
+    .set(000, 50, 000);
+
+window.onresize = function () {
+    let windowHalfX = window.innerWidth / 2;
+    let windowHalfY = window.innerHeight / 2;
+    let mouseX = 0,
+        mouseY = 0;
+        const anim = document.getElementById("canvas");
+    const aspect = window.innerWidth / window.innerHeight;
+
+    camera.left = -frustumSize * aspect / 2;
+    camera.right = frustumSize * aspect / 2;
+    camera.top = frustumSize / 2;
+    camera.bottom = -frustumSize / 2;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+}
+document
+    .body
+    .addEventListener('pointermove', onPointerMove);
+document
+    .body
+    .appendChild(renderer.domElement);
+
+renderer.render(scene, camera);
+
+function onPointerMove(event) {
+
+    if (event.isPrimary === false) 
+        return;
+    
+    mouseX = (event.clientX - windowHalfX) / 256;
+    mouseY = (event.clientY - windowHalfY) / 256;
+
+}
+function animate() {
+    camera.position.x += (mouseX - camera.position.x) * 0.03;
+    camera.position.y += (-mouseY - camera.position.y) * 0.03;
+
+    camera.position.z = 100;
+    camera.lookAt(scene.position);
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+}
+animate();
+    </script>
+</body>
+</html>
