@@ -1,54 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko" class="home is-chrome has-mouse has-touch sr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UNREVR</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="shortcut icon" href="img/AnyConv.com__대지 1 (2).ico">
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous">
-        <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossorigin="crossorigin">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap"
-            rel="stylesheet">
-        <script src="js/three.js"></script>
-        <script src="node_modules\three\examples\js\controls\OrbitControls.js"></script>
-        <script src="node_modules\three\examples\js\libs\fflate.min.js"></script>
-        <script src="node_modules\three\examples\js\loaders\FBXLoader.js"></script>
-        <script src="node_modules\three\examples\js\loaders\GLTFLoader.js"></script>
-        <script src="node_modules\three\examples\js\helpers\RectAreaLightHelper.js"></script>
-        <script src="node_modules1\scrollreveal\dist\scrollreveal.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNREVR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="img/AnyConv.com__대지 1 (2).ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+    <script src="js/three.js"></script>
+    <script src="node_modules\three\examples\js\effects\AsciiEffect.js"></script>
+    <script src="node_modules\three\examples\js\controls\OrbitControls.js"></script>
+    <script src="node_modules\three\examples\js\libs\fflate.min.js"></script>
+    <script src="node_modules\three\examples\js\loaders\FBXLoader.js"></script>
+    <script src="node_modules\three\examples\js\loaders\GLTFLoader.js"></script>
+    <script src="node_modules\three\examples\js\helpers\RectAreaLightHelper.js"></script>
+    <script src="node_modules1\scrollreveal\dist\scrollreveal.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
-        <nav
-            class="navbar navbar-expand-sm navbar-custombg-dark fixed-top"
-            id="uppernav">
-            <div class="container-fluid">
-                <img src="img\대지 1@0.5x.png" alt="" style="width: 50px; height: 50px;">
-                <a
-                    class="navbar-brand"
-                    href="#"
-                    style="color: white;font-family: 'SUIT-Heavy';">UNREVR</a>
-                <button
-                    class="navbutton"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDarkDropdown"
-                    aria-controls="navbarNavDarkDropdown"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-custombg-dark fixed-top" id="uppernav">
+        <div class="container-fluid">
+            <img src="img\대지 1@0.5x.png" alt="" style="width: 50px; height: 50px;">
+            <a class="navbar-brand" href="#" style="color: white;font-family: 'SUIT-Heavy';">UNREVR</a>
+            <button class="navbutton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     <svg width="50" height="50" viewbox="0 0 100 100">
                         <path
@@ -60,48 +41,27 @@
                             d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
                     </svg>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                    <ul class="navbar-nav  navbar-custom">
-                        <li class="navtext">
-                            <a
-                                class="dropdown-item navtext"
-                                href="#"
-                                style="color: white;font-family: 'SUIT-Heavy';">홈</a>
-                        </li>
-                        <li class="navtext">
-                            <a
-                                class="dropdown-item navtext"
-                                href="404.html"
-                                style="color: white;font-family: 'SUIT-Heavy';">포트폴리오</a>
-                        </li>
-                        <li class="navtext">
-                            <a
-                                class="dropdown-item navtext"
-                                href="404.html"
-                                style="color: white;font-family: 'SUIT-Heavy';">부원</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav  navbar-custom">
+                    <li class="navtext">
+                        <a class="dropdown-item navtext" href="#" style="color: white;font-family: 'SUIT-Heavy';">홈</a>
+                    </li>
+                    <li class="navtext">
+                        <a class="dropdown-item navtext" href="404.html" style="color: white;font-family: 'SUIT-Heavy';">포트폴리오</a>
+                    </li>
+                    <li class="navtext">
+                        <a class="dropdown-item navtext" href="404.html" style="color: white;font-family: 'SUIT-Heavy';">부원</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <nav
-            class="navbar navbar-expand-sm navbar-custombg-dark fixed-top"
-            id="undernav">
-            <div class="container-fluid">
-                <img src="img\대지 1@0.75x.png" alt="" style="width: 50px; height: 50px;">
-                <a
-                    class="navbar-brand"
-                    href="#"
-                    style="color: rgb(0, 0, 0);font-family: 'SUIT-Heavy';">UNREVR</a>
-                <button
-                    class="navbutton"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDarkDropdown"
-                    aria-controls="navbarNavDarkDropdown"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-sm navbar-custombg-dark fixed-top" id="undernav">
+        <div class="container-fluid">
+            <img src="img\대지 1@0.75x.png" alt="" style="width: 50px; height: 50px;">
+            <a class="navbar-brand" href="#" style="color: rgb(0, 0, 0);font-family: 'SUIT-Heavy';">UNREVR</a>
+            <button class="navbutton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     <svg width="50" height="50" viewbox="0 0 100 100">
                         <path
@@ -115,187 +75,162 @@
                             d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
                     </svg>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                    <ul class="navbar-nav  navbar-custom">
-                        <li class="navtext">
-                            <a
-                                class="dropdown-item navtext"
-                                href="#"
-                                style="color: rgb(0, 0, 0);font-family: 'SUIT-Heavy';">홈</a>
-                        </li>
-                        <li class="navtext">
-                            <a
-                                class="dropdown-item navtext"
-                                href="404.html"
-                                style="color: rgb(0, 0, 0);font-family: 'SUIT-Heavy';">포트폴리오</a>
-                        </li>
-                        <li class="navtext">
-                            <a
-                                class="dropdown-item navtext"
-                                href="404.html"
-                                style="color: rgb(0, 0, 0);font-family: 'SUIT-Heavy';">부원</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <script src="js\script.js?ver=123"></script>
-        <div id="title">
-            <div id="intro">
-                <div id="innerintro">
-                    당신의 모든<br>
-                    상상을 현실로.<br>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav  navbar-custom">
+                    <li class="navtext">
+                        <a class="dropdown-item navtext" href="#" style="color: rgb(0, 0, 0);font-family: 'SUIT-Heavy';">홈</a>
+                    </li>
+                    <li class="navtext">
+                        <a class="dropdown-item navtext" href="404.html" style="color: rgb(0, 0, 0);font-family: 'SUIT-Heavy';">포트폴리오</a>
+                    </li>
+                    <li class="navtext">
+                        <a class="dropdown-item navtext" href="404.html" style="color: rgb(0, 0, 0);font-family: 'SUIT-Heavy';">부원</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div id="whole">
-            <div id="innerwhole">
-                <div id="first" class="section">
+    </nav>
+
+    <script src="js\script.js?ver=123"></script>
+    <div id="title">
+        <div id="intro">
+            <div id="innerintro">
+                당신의 모든<br> 상상을 현실로.<br>
+            </div>
+        </div>
+    </div>
+    <div id="whole">
+        <div id="innerwhole">
+            <div id="first" class="section">
+                <div class="innercontent">
+                    <div class="head">
+                        UNREVR를 소개합니다.
+                    </div>
+                    <div class="text">
+                        &nbsp&nbsp&nbsp&nbsp&nbsp언리버는 다양한 정보 분야의 기술로 선후배를 포함한 부원들이 서로 협력하며 다양한 과학 기술을 소개하는 어플리케이션과 게임 등의 컨텐츠를 제작하고, 경기북과학고 교내 학생들을 넘어 더욱 많은 사람들에게 이를 공유하여 과학의 대중화를 선도하는 경기북과학고등학교의 융합과학동아리입니다.
+                        <a href="https://www.youtube.com/channel/UCGBd4y7I52M-DjfqZXwAO7g" style="position: absolute; bottom: 0;">
+                            <img src="img/youtube.png" alt="" width="80px">
+                            <span>유튜브 채널 바로가기</span>
+                        </a>
+                    </div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rjLjxZ-bchI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+
+                </div>
+            </div>
+
+            <div id="third" class="section">
+                <div id="canvas" style="opacity: 10%;">
+                    <img id="sec" src="img/hardcode.png" alt="">
+                </div>
+                <div class="innercontent" style="color: white;">
+                    <div id="innertext">
+                        <div class="head">더욱 자유로움.
+                            <br>가장 다채로움.</div>
+                        <div class="text img">
+                            혹시, "자유로움"에 이끌려 어려운 활동만 하고 계시진 않습니까?<br><br> 언리버는 집중적이고 어려운 탐구보단, 과학적인 지식과 기술들을 활용해 멋진 컨텐츠를 만들어내는 것을 지향합니다.
+                            <br> 이를 위해 북과고 내 가장 자유로운 시설 레인보우메이커스실에서 부원들의 다채로운 아이디어가 오갈 수 있도록 노력하고, 나아가 그 아이디어를 직접 실현할 수 있도록 학기초 다양한 세미나를 진행하고 있습니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fourth" class="section">
+                <div class="innercontent" style="color: white;">
+                    <div id="innertext">
+                        <div class="head">창의적인 생각,
+                            <br>모두 언리버로부터.</div>
+                        <div class="text img">
+                            게임, 웹사이트, 어플리케이션을 넘어 미디어컨텐츠까지.
+                            <br><br> 언리버는 부원들의 번뜩이는 아이디어만 있다면 곧바로 실행합니다. 실제 언리버는 지난 2021년부터 유튜브 채널을 개설하여 동아리 내 활동을 기록하거나 과학과 관련된 동영상을 업로드하고 있습니다.
+                        </div>
+                    </div>
+                    <a href="https://www.youtube.com/channel/UCGBd4y7I52M-DjfqZXwAO7g">
+                        <img src="img\0.5x\대지 1.png" alt="" width="400px" style="opacity: 30%;">
+                    </a>
+
+                </div>
+            </div>
+            <div id="second" class="section">
+                <div id="canvas">
+                    <canvas id="animation"></canvas>
+                </div>
+                <div class="innercontents">
+
                     <div class="innercontent">
                         <div class="head">
-                            언리버를 소개합니다.
+                            2021
+                            <br>최고의 동아리.
                         </div>
-                        <hr style="border: solid 0.5px rgba(0, 0, 0, 0.392);">
                         <div class="text">
-                            언리버는 다양한 정보 분야의 기술로 선후배를 포함한 부원들이 힘을 모아 과학과 관련된 어플리케이션과 게임 등을 제작하고, 교내 학생들을 넘어
-                            더욱 많은 사람들에게 이를 공유하여 과학을 대중화하는 경기북과학고등학교의 융합과학동아리입니다.
-                        </div>
-                        <iframe
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/rjLjxZ-bchI?controls=0"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen="allowfullscreen"></iframe>
-    
-                    </div>
-                </div>
-    
-                <div id="third" class="section">
-                    <div id="canvas" style="opacity: 10%;">
-                        <img id="sec" src="img/hardcode.png" alt="">
-                    </div>
-                    <div class="innercontent" style="color: white;">
-                        <div id="innertext">
-                            <div class="head">더욱 자유로움.
-                                <br>가장 다채로움.</div>
-                            <div class="text img">
-                                혹시, "자유로움"에 이끌려 어려운 활동만 하고 계시진 않습니까?<br><br>
-                                언리버는 집중적이고 어려운 탐구보단, 과학적인 지식과 기술들을 활용해 멋진 컨텐츠를 만들어내는 것을 지향합니다.
-                                <br>
-                                이를 위해 북과고 내 가장 자유로운 시설 레인보우메이커스실에서 부원들의 다채로운 아이디어가 오갈 수 있도록 노력하고, 나아가 그 아이디어를 직접
-                                실현할 수 있도록 학기초 다양한 세미나를 진행하고 있습니다.
-                            </div>
+                            지난 2021년, 한 해간 북과학고의 모든 과학동아리에서 진행한 프로젝트들을 선보일 수 있었던 과학동아리학술발표회,
+                            <br><br>언리버는 웹 기반 텍스트 어드밴쳐 게임 『탈출,경기북』과 C++ 단일 언어로 개발한 『다이노게임』을 비롯한 다양한 컨텐츠를 내세워 학생 대상 투표 1위를 기록했습니다.
+                            <br><br><a class="a" href="/404">▶ 포트폴리오 바로가기(개발중)</a>
                         </div>
                     </div>
                 </div>
-                <div id="fourth" class="section">
-                    <div class="innercontent" style="color: white;">
-                        <div id="innertext">
-                            <div class="head">창의적인 생각,
-                                <br>모두 언리버로부터.</div>
-                            <div class="text img">
-                                게임, 웹사이트, 어플리케이션을 넘어 미디어컨텐츠까지.
-                                <br><br>
-                                언리버는 부원들의 번뜩이는 아이디어만 있다면 곧바로 실행합니다. 실제 언리버는 지난 2021년부터 유튜브 채널을 개설하여 동아리 내 활동을 기록하거나 과학과
-                                관련된 동영상을 업로드하고 있습니다.
-                            </div>
+                <div class="blur"></div>
+            </div>
+            <div id="fifth" class="section">
+                <div class="innercontents">
+                    <div class="innercontent">
+                        <div class="head">
+                            언리버와 함께합니다.
                         </div>
-                        <a href="https://www.youtube.com/channel/UCGBd4y7I52M-DjfqZXwAO7g">
-                            <img src="img\0.5x\대지 1.png" alt="" width="400px" style="opacity: 30%;">
-                        </a>
-    
-                    </div>
-                </div>
-                <div id="second" class="section">
-                    <div id="canvas">
-                        <canvas id="animation"></canvas>
-                    </div>
-                    <div class="innercontents">
-    
-                        <div class="innercontent">
-                            <div class="head">
-                                2021
-                                <br>최고의 동아리.
-                            </div>
-                            <div class="text">
-                                지난 2021년, 한 해간 북과학고의 모든 과학동아리에서 진행한 프로젝트들을 선보일 수 있었던 과학동아리학술발표회,
-                                <br><br>언리버는 웹 기반 텍스트 어드밴쳐 게임 『탈출,경기북』과 C++ 단일 언어로 개발한 『다이노게임』을 비롯한 다양한 컨텐츠를 내세워
-                                    학생 대상 투표 1위를 기록했습니다.
-                                <a class="a" href="/404">▶ 포트폴리오 바로가기(개발중)</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blur"></div>
-                </div>
-                <div id="fifth" class="section">
-                    <div class="innercontents">
-                        <div class="innercontent">
-                            <div class="head">
-                                언리버와 함께합니다.
-                            </div>
-                            <div class="text">
-                                언리버의 부원들은 지금까지도 인성동아리를 비롯하여 경기북과학고등학교의 수많은 곳에서 다양한 컨텐츠를 제작하고 있습니다. <br>언리버 바깥에서 언리버 부원들의 활약을 확인해보세요.
-                            </div>
-                            <div id="list">
-                                <ul>
-                                    <li id="avian"class="discript">
-                                        <a href="https://avian.co.kr/">
+                        <div id="list">
+                            <ul>
+                                <li id="avian" class="discript">
+                                    <a href="https://avian.co.kr/">
                                             미디어컨텐츠제작부 AVIAN
-                                            <div class="text" style="margin-top:10px;"> - 17기 기장 인유민 소속</div>
+                                            <div class="text" style="margin-top:10px;"> - 17기 인유민 소속</div>
                                         </a>
-                                    </li>
-                                    <li id="iroom"class="discript">
-                                        <a href="http://iroom.me/">웹 개발 동아리 IROOM
-                                            <div class="text" style="margin-top:10px;"> - 17기 기장 최주연 및 부원 다수 소속</div>
+                                </li>
+                                <li id="iroom" class="discript">
+                                    <a href="http://iroom.me/">
+                                        웹 개발 동아리 IROOM
+                                            <div class="text" style="margin-top:10px;"> - 17기 최주연 및 부원 다수 소속</div>
                                         </a>
-                                        
-                                    </li>
-                                    <li id="siki"class="discript">
-                                        <a href="https://gbswiki.hegelty.me/">
+
+                                </li>
+                                <li id="siki" class="discript">
+                                    <a href="https://gbswiki.hegelty.me/">
                                             경기북과학고등학교 위키 GBSwiki
                                             <div class="text" style="margin-top:10px;"> - IROOM, UNREVR 공동 제작</div>
                                         </a>
-                                    </li>
-                                </ul>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
-            <script>
-                $(window).scroll(function () {
-                    var up = document.getElementById("uppernav");
-                    var down = document.getElementById("undernav");
-                    var title = document.getElementById("title");
-                    title.style.display = "flex";
-                    up.style.display = "flex";
-                    down.style.display = "none";
-                    if ($(window).scrollTop() >= $('#whole').offset().top) {
+        <script>
+            $(window).scroll(function() {
+                var up = document.getElementById("uppernav");
+                var down = document.getElementById("undernav");
+                var title = document.getElementById("title");
+                title.style.display = "flex";
+                up.style.display = "flex";
+                down.style.display = "none";
+                if ($(window).scrollTop() >= $('#whole').offset().top) {
 
-                        title.style.display = "none";
-                        up.style.display = "none";
-                        down.style.display = "flex";
-                    } else {}
-                })
-                ScrollReveal().reveal('.innercontent', {
-                    origin: 'bottom',
-                    reset: true,
-                    delay: '120'
-                });
-                ScrollReveal().reveal('.innercontents', {
-                    origin: 'bottom',
-                    reset: true,
-                    delay: '120'
-                });
-            </script>
-            <script
-                src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                crossorigin="anonymous"></script>
-        </body><br>
-    </html>
+                    title.style.display = "none";
+                    up.style.display = "none";
+                    down.style.display = "flex";
+                } else {}
+            })
+            ScrollReveal().reveal('.innercontent', {
+                origin: 'bottom',
+                reset: true,
+                delay: '120'
+            });
+            ScrollReveal().reveal('.innercontents', {
+                origin: 'bottom',
+                reset: true,
+                delay: '120'
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body><br>
+
+</html>
