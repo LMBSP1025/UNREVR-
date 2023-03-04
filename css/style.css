@@ -182,7 +182,7 @@ canvas {
 
 #icon {
     position: fixed;
-    left: 50%;
+    left: 60%;
     top: 0;
     height: 100%;
     width: 100%;
@@ -203,6 +203,7 @@ canvas {
     top: 0;
     z-index: 1;
     position: relative;
+    background-color: #f9ddb6;
     flex: inherit;
     animation: fadein 3s;
     -moz-animation: fadein 3s;
@@ -773,6 +774,9 @@ nav {
     #first {
         padding: 20px;
     }
+    #icon {
+        left: 50%;
+    }
     #first .head {
         position: relative;
         text-align: center;
@@ -949,7 +953,7 @@ nav {
     }
     #fifth .innercontent .head {
         position: relative;
-        font-family: 'SUIT-Heavy';
+        font-family: 'PyeongChangPeace-Bold';
         text-align: left;
         float: left;
         width: 100%;
@@ -1084,6 +1088,9 @@ nav {
     }
     #undernav .navbar-custom {
         width: 100%;
+    }
+    #first .head {
+        text-align: left;
     }
 }
 
