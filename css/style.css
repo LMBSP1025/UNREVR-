@@ -1033,7 +1033,8 @@ nav {
         box-shadow: 0 -100px 100px #ffffff;
     }
     #canvas {
-        opacity: 50%;
+        opacity: 70%;
+        filter: blur(5px);
     }
 }
 
