@@ -12,50 +12,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
-    <script src="js/three.js"></script>
-    <script src="node_modules\three\examples\js\effects\AsciiEffect.js"></script>
-    <script src="node_modules\three\examples\js\controls\OrbitControls.js"></script>
-    <script src="node_modules\three\examples\js\libs\fflate.min.js"></script>
-    <script src="node_modules\three\examples\js\loaders\FBXLoader.js"></script>
-    <script src="node_modules\three\examples\js\loaders\GLTFLoader.js"></script>
-    <script src="node_modules\three\examples\js\helpers\RectAreaLightHelper.js"></script>
     <script src="node_modules1\scrollreveal\dist\scrollreveal.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script type="module" src="js/glowparticle.js"></script>
+    <script src="js/p5.min.js"></script>
+    <script type="module" src="js/title.js"></script>
+    <script src="js/background.js"></script>
+
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-sm navbar-custombg-dark fixed-top" id="uppernav">
-        <div class="container-fluid">
-            <img src="img\대지 1@0.5x.png" alt="" style="width: 50px; height: 50px;">
-            <a class="navbar-brand" href="#" style="color: white;font-family: 'SUIT-Heavy';">UNREVR</a>
-            <button class="navbutton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <svg width="50" height="50" viewbox="0 0 100 100">
-                        <path
-                            class="line line1"
-                            d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"/>
-                        <path class="line line2" d="M 20,50 H 80"/>
-                        <path
-                            class="line line3"
-                            d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
-                    </svg>
-                </button>
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                <ul class="navbar-nav  navbar-custom">
-                    <li class="navtext">
-                        <a class="dropdown-item navtext" href="#" style="color: white;font-family: 'SUIT-Heavy';">홈</a>
-                    </li>
-                    <li class="navtext">
-                        <a class="dropdown-item navtext" href="404.html" style="color: white;font-family: 'SUIT-Heavy';">포트폴리오</a>
-                    </li>
-                    <li class="navtext">
-                        <a class="dropdown-item navtext" href="404.html" style="color: white;font-family: 'SUIT-Heavy';">부원</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     <nav class="navbar navbar-expand-sm navbar-custombg-dark fixed-top" id="undernav">
         <div class="container-fluid">
@@ -65,12 +32,12 @@
                     <span class="navbar-toggler-icon"></span>
                     <svg width="50" height="50" viewbox="0 0 100 100">
                         <path
-                            style="stroke: black;"
+                            style="stroke: rgb(0, 0, 0);"
                             class="line line1"
                             d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"/>
-                        <path style="stroke: black;" class="line line2" d="M 20,50 H 80"/>
+                        <path style="stroke: rgb(0, 0, 0);" class="line line2" d="M 20,50 H 80"/>
                         <path
-                            style="stroke: black;"
+                            style="stroke: rgb(0, 0, 0);"
                             class="line line3"
                             d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
                     </svg>
@@ -91,11 +58,17 @@
         </div>
     </nav>
 
-    <script src="js\script.js?ver=123"></script>
     <div id="title">
+        <div id="icon">
+            <div id="background">
+
+                <canvas id="titlecanvas" style="height: 100vh;"></canvas>
+            </div>
+        </div>
         <div id="intro">
             <div id="innerintro">
-                당신의 모든<br> 상상을 현실로.<br>
+                당신의
+                <br> 상상을<br> 현실로.<br></span>
             </div>
         </div>
     </div>
@@ -106,9 +79,9 @@
                     <div class="head">
                         UNREVR를 소개합니다.
                     </div>
-                    <iframe width="800" height="315" src="https://www.youtube.com/embed/rjLjxZ-bchI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wcPN0G2lEn4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <div class="text">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp언리버는 다양한 정보 분야의 기술로 선후배를 포함한 부원들이 서로 협력하며 다양한 과학 기술을 소개하는 어플리케이션과 게임 등의 컨텐츠를 제작하고, 경기북과학고 교내 학생들을 넘어 더욱 많은 사람들에게 이를 공유하여 과학의 대중화를 선도하는 경기북과학고등학교의 융합과학동아리입니다.
+                        &nbsp&nbsp&nbsp&nbsp&nbsp언리버는 다양한 정보 분야의 기술로 선후배를 포함한 부원들이 서로 협력하며 다양한 과학 기술을 소개하는 어플리케이션과 게임 등의 컨텐츠를 제작하는 경기북과학고등학교의 융합과학동아리입니다.<br><br>언리버는 경기북과학고 교내 학생들을 넘어 더욱 많은 사람들에게 이를 공유하여 과학의 대중화를 선도하고자 합니다.
                         <a href="https://www.youtube.com/channel/UCGBd4y7I52M-DjfqZXwAO7g" style="position: absolute; bottom: 0;">
                             <img src="img/youtube.png" alt="" width="80px">
                             <span>유튜브 채널 바로가기</span>
@@ -127,7 +100,7 @@
                             <br>가장 다채로움.</div>
                         <div class="text img">
                             혹시, "자유로움"에 이끌려 어려운 활동만 하고 계시진 않습니까?<br><br> 언리버는 집중적이고 어려운 탐구보단, 과학적인 지식과 기술들을 활용해 멋진 컨텐츠를 만들어내는 것을 지향합니다.
-                            <br> 이를 위해 북과고 내 가장 자유로운 시설 레인보우메이커스실에서 부원들의 다채로운 아이디어가 오갈 수 있도록 노력하고, 나아가 그 아이디어를 직접 실현할 수 있도록 학기초 다양한 세미나를 진행하고 있습니다.
+                            <br><br> 이를 위해 북과고 내 가장 자유로운 시설 레인보우메이커스실에서 부원들의 다채로운 아이디어가 오갈 수 있도록 노력하고, 나아가 그 아이디어를 직접 실현할 수 있도록 학기초 다양한 세미나를 진행하고 있습니다.
                         </div>
                     </div>
                 </div>
@@ -145,7 +118,6 @@
                     <a href="https://www.youtube.com/channel/UCGBd4y7I52M-DjfqZXwAO7g">
                         <img src="img\0.5x\대지 1.png" alt="" width="400px" style="opacity: 30%;">
                     </a>
-
                 </div>
             </div>
             <div id="second" class="section">
@@ -162,7 +134,7 @@
                         <div class="text">
                             지난 2021년, 한 해간 북과학고의 모든 과학동아리에서 진행한 프로젝트들을 선보일 수 있었던 과학동아리학술발표회,
                             <br><br>언리버는 웹 기반 텍스트 어드밴쳐 게임 『탈출,경기북』과 C++ 단일 언어로 개발한 『다이노게임』을 비롯한 다양한 컨텐츠를 내세워 학생 대상 투표 1위를 기록했습니다.
-                            <br><br><a class="a" href="/404">▶ 포트폴리오 바로가기(개발중)</a>
+                            <br><br>
                         </div>
                     </div>
                 </div>
@@ -201,32 +173,26 @@
                 </div>
             </div>
         </div>
-
+        <footer>
+            <div id="copyright">
+                <div id="copyline">
+                    <img src="img/LOGO.png" style="width: 30px; filter: invert(1);">
+                    <span class="copyright"><small><br>Copyright ⓒ 2022 UNREVR. 모든 권리 보유.<br></small></span>
+                    <span class="copyright" style=" font-size: 13px; color: rgb(196, 196, 196);">대한민국 경기도 의정부시 체육로135번길 32</span>
+                </div>
+            </div>
+        </footer>
 
         <script>
+            var last_top = 0;
             $(window).scroll(function() {
-                var up = document.getElementById("uppernav");
-                var down = document.getElementById("undernav");
-                var title = document.getElementById("title");
-                title.style.display = "flex";
-                up.style.display = "flex";
-                down.style.display = "none";
-                if ($(window).scrollTop() >= $('#whole').offset().top) {
-
-                    title.style.display = "none";
-                    up.style.display = "none";
-                    down.style.display = "flex";
-                } else {}
-            })
-            ScrollReveal().reveal('.innercontent', {
-                origin: 'bottom',
-                reset: true,
-                delay: '120'
-            });
-            ScrollReveal().reveal('.innercontents', {
-                origin: 'bottom',
-                reset: true,
-                delay: '120'
+                var this_top = $(this).scrollTop();
+                if (this_top > last_top) {
+                    $("#undernav").addClass("hide");
+                } else {
+                    $("#undernav").removeClass("hide");
+                }
+                last_top = this_top;
             });
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
