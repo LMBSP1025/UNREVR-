@@ -384,7 +384,7 @@ a:hover {
 }
 
 #first {
-    height: 100vh;
+    height: min-content;
     padding: 40px;
     padding-top: 60px;
     margin-top: 0;
