@@ -9,7 +9,6 @@ function setup() {
     myCanvas.style('height', '80vh');
     myCanvas.style('width', '90vw');
     myCanvas.style('position', 'relative');
-    myCanvas.style('border-radius', '30px');
     myCanvas.style('margin', '0 auto');
 
     console.log(myCanvas);
